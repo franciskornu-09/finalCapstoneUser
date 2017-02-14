@@ -20,7 +20,7 @@ class CreateEventFoldersTable extends Migration {
 			$table->integer('regular_ticket');
 			$table->integer('vip_ticket');
 			$table->string('image');
-			$table->integer('oriinal_number');
+			$table->integer('original_number');
 			$table->integer('number_left');
 			$table->timestamps();
 

@@ -28,8 +28,8 @@
 							</div>
 							<div class="w3ls-text">
 								<h5><a href="{{action("MapController@index")}}">{{$post->description}}</a></h5>
-								<h6>Vip: {{$post->vip}}</h6>
-								<p>Regular: {{$post->regular}}</p>
+								<h6>Vip: {{$post->vip_ticket}}</h6>
+								<p>Regular: {{$post->regular_ticket}}</p>
 								<p><b>Tickets Left :</b> {{$post->number_left}} </p>
 							</div>
 							

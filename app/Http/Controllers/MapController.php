@@ -15,7 +15,8 @@ class MapController extends Controller {
 	 */
 	public function index()
 	{
-		$locations = DB::table('markers')->get();
+		 //$locations = DB::table('markers')->get();
+		 $locations = DB::select( DB::raw("SELECT *,number_left,event_folders.name as eName FROM markers,event_folders WHERE identify = 'New Play' and event_folders.name='New Play'") );
     	return view('map',compact('locations'));
 	}
 
