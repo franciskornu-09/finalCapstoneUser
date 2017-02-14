@@ -37,7 +37,7 @@
       el: '#mymap',
       lat: 21.170240,
       lng: 72.831061,
-      zoom:6
+      zoom:8
     });
 
     GMaps.geolocate({
