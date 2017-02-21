@@ -18,19 +18,21 @@
 						<div class="properties-bottom">
 							<div class="properties-img">
 							
-							<img src="{{$post->image}}" alt="" class="users-img">
+							<img alt="" class="banner-img2">
 								<div class="view-caption">
-									<h4><span class="glyphicon glyphicon-map-marker"></span> {{$post->name}} </h4>  
+									<h4>{{$post->name}} </h4>  
 								</div>
 								<div class="w3ls-buy">
-									<a href="{{action("SingleController@index")}}">Buy</a> 
+									<a href="{{action('SingleController@index')}}">Buy</a> 
 								</div>
 							</div>
 							<div class="w3ls-text">
-								<h5><a href="{{action("MapController@index")}}">{{$post->description}}</a></h5>
-								<h6>Vip: {{$post->vip_ticket}}</h6>
+								<h5><span class="glyphicon glyphicon-map-marker"></span><a href="{{action("MapController@index")}}">Vendors</a></h5><br>
+								<!-- <h6>Vip: {{$post->vip_ticket}}</h6>  -->
 								<p>Regular: {{$post->regular_ticket}}</p>
 								<p><b>Tickets Left :</b> {{$post->number_left}} </p>
+								<p style="float: right"><a onClick="alert('{{$post->description}}')">More</a></p>
+								
 							</div>
 							
 						</div>
@@ -51,7 +53,6 @@
 	  
 			var nice = $("html").niceScroll();  // The document page (body)
 		
-			$("#div1").html($("#div1").html()+' '+nice.version);
 		
 			$("#boxscroll").niceScroll({cursorborder:"",cursorcolor:"#00F",boxzoom:true}); // First scrollable DIV
 		});

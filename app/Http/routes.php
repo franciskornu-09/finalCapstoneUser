@@ -38,6 +38,8 @@ Route::get('search','SearchController@show');
 
 Route::get('map','MapController@index');
 
+Route::post('insert','FindController@index');
+
 Route::get('provideXml','MapController@show');
 
 Route::get('insert', function(){

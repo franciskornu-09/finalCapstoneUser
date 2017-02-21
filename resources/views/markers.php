@@ -10,7 +10,7 @@ $dom = new DOMDocument("1.0");
 
     foreach ($users as $marker) {
        $node = $dom->createElement("marker");
-         $newnode = $parnode->appendChild($node);
+       $newnode = $parnode->appendChild($node);
        $newnode->setAttribute("name",$marker->name);
        $newnode->setAttribute("address", $marker->address);
        $newnode->setAttribute("lat", $marker->lat);
