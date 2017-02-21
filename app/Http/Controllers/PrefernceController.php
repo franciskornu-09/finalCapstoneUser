@@ -4,7 +4,7 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\DB;
 class PrefernceController extends Controller {
 
 	/**
@@ -46,6 +46,10 @@ class PrefernceController extends Controller {
 	public function show($id)
 	{
 		//
+		$events = DB::select( DB::raw("SELECT * from event_folders where name ='$id'"));
+		
+		return view('single',compact('events'));
+
 	}
 
 	/**

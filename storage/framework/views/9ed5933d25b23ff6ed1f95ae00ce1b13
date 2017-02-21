@@ -1,6 +1,4 @@
-@extends('app')
-
-@section('content')
+<?php $__env->startSection('content'); ?>
 
 <div class="content">
 				<!-- banner -->
@@ -13,13 +11,14 @@
 				<!-- properties --> 
 				<div class="w3agile properties"> 
 					<h3 class="w3ls-title">Results</h3> 
-						{{$events}}
+						<?php echo e($events); ?>
+
 						<center>
 						<br><br>
-						<form method="post" action="{{action("FindController@index")}}">
+						<form method="post" action="<?php echo e(action("FindController@index")); ?>">
 				        <input data-provide="typeahead" data-items="4" id="item" name="item" type="text" 
 				           class="span2 search-query">
-				           <input type="hidden" name="_token" value="{{{ csrf_token() }}}" />
+				           <input type="hidden" name="_token" value="<?php echo e(csrf_token()); ?>" />
 				        <!-- <button class="btn" id="search">Search</button> -->
 						<button class="btn btn btn-info active" role="button" aria-pressed="true" style="width: auto">Search</button>
 					</form>
@@ -28,16 +27,17 @@
 					
 			</div>
 	<!-- menu-js -->
-	<script src="{{ asset('js/classie.js') }}"></script>
-	<script src="{{ asset('js/main.js') }}"></script>
+	<script src="js/classie.js"></script>
+	<script src="js/main.js"></script>
 	<!-- //menu-js -->
 	<!-- nicescroll-js -->
-	<script src="{{ asset('js/jquery.nicescroll.min.js') }}"></script> 
+	<script src="js/jquery.nicescroll.min.js"></script> 
 	<script>
 		$(document).ready(function() {
 	  
 			var nice = $("html").niceScroll();  // The document page (body)
 		
+			$("#div1").html($("#div1").html()+' '+nice.version);
 		
 			$("#boxscroll").niceScroll({cursorborder:"",cursorcolor:"#00F",boxzoom:true}); // First scrollable DIV
 		});
@@ -46,5 +46,7 @@
 	<!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="{{ asset('js/bootstrap.js') }}"></script>
-@endsection
+    <script src="js/bootstrap.js"></script>
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('app', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

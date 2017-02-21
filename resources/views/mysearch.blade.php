@@ -23,7 +23,7 @@
 									<h4>{{$post->name}} </h4>  
 								</div>
 								<div class="w3ls-buy">
-									<a href="{{action("SingleController@index")}}">Buy</a> 
+									<a href="{!! route('switch', ['id'=>$post->name]) !!}">Buy</a>  
 								</div>
 							</div>
 							<div class="w3ls-text">
@@ -50,15 +50,16 @@
 					
 			</div>
 	<!-- menu-js -->
-	<script src="js/classie.js"></script>
-	<script src="js/main.js"></script>
+	<script src="{{ asset('js/classie.js') }}"></script>
+	<script src="{{ asset('js/main.js') }}"></script>
 	<!-- //menu-js -->
 	<!-- nicescroll-js -->
-	<script src="js/jquery.nicescroll.min.js"></script> 
+	<script src="{{ asset('js/jquery.nicescroll.min.js') }}"></script> 
 	<script>
 		$(document).ready(function() {
 	  
 			var nice = $("html").niceScroll();  // The document page (body)
+		
 		
 			$("#boxscroll").niceScroll({cursorborder:"",cursorcolor:"#00F",boxzoom:true}); // First scrollable DIV
 		});
@@ -67,5 +68,5 @@
 	<!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="js/bootstrap.js"></script>
+    <script src="{{ asset('js/bootstrap.js') }}"></script>
 @endsection

@@ -8,53 +8,42 @@
 				</div>
 				<!-- //banner -->
 				<!-- properties --> 
+				<?php foreach($events as $post): ?>
 				<div class="w3agile properties">   
 					<div class="properties-img properties-img-single">
-						<img src="images/3.jpg" alt="">
+						<img class="banner-img2">
 						<div class="view-caption">
-							<h4><span class="glyphicon glyphicon-map-marker"></span> Broome St, Canada, USA </h4>  
+							<h4><span class="glyphicon glyphicon-map-marker"></span> <?php echo e($post->name); ?> </h4>  
 						</div> 
 					</div>
 					<div class="w3ls-details">   
-						<h4>Property Description</h4> 
-						<p class="agile-text">Lorem Ipsum has been industry's dummy text ever standard remember when your team is playing. Sed porta magna vitae nisl lacinia orbi malesuada sollic itudin . </p>
+						<h4>Event Description</h4> 
+						<p class="agile-text"><?php echo e($post->description); ?> </p>
 						<div class="w3ls-text">
-							<h4>Property Details</h4>  
-							<p><b>Price :</b> $1500 k </p>
-							<p><b>Area :</b> 2,145 sq.ft </p>
-							<p><b>Bed Rooms :</b> 3 </p>
-							<p><b>Bath Rooms :</b> 2 </p>
+							<h4>Event Details</h4>  
+							<p><b>Price :</b>GH$ <?php echo e($post->regular_ticket); ?> </p>
+							<p><b>VIP :</b>GH$ <?php echo e($post->vip_ticket); ?> </p>
+							<p><b>Tickets Available :</b> <?php echo e($post->number_left); ?> </p>
+							<p><b>Venue of Event :</b>  </p>
 						</div>
-					</div>
-					<div class="w3ls-features">   
-						<h3 class="w3ls-title">Property Features</h3> 
-						<ul> 
-							<li><span class="glyphicon glyphicon-ok"> </span> School </li>
-							<li><span class="glyphicon glyphicon-ok"> </span> Fireplace</li>
-							<li><span class="glyphicon glyphicon-ok"> </span> Wine Cellar</li>
-							<li><span class="glyphicon glyphicon-ok"> </span> Gym</li>
-							<li><span class="glyphicon glyphicon-ok"> </span> Storm Windows</li>
-							<li><span class="glyphicon glyphicon-ok"> </span> Storm Windows</li>
-							<li><span class="glyphicon glyphicon-ok"> </span> Pet Allowed</li>
-						</ul>
 					</div>
 					
 				</div>
+				<?php endforeach; ?>
 			</div>
 		</div>
 	</div> 
 	<!-- menu-js -->
-	<script src="js/classie.js"></script>
-	<script src="js/main.js"></script>
+	<script src="<?php echo e(asset('js/classie.js')); ?>"></script>
+	<script src="<?php echo e(asset('js/main.js')); ?>"></script>
 	<!-- //menu-js -->
 	<!-- nicescroll-js -->
-	<script src="js/jquery.nicescroll.min.js"></script> 
+	<script src="<?php echo e(asset('js/jquery.nicescroll.min.js')); ?>"></script> 
 	<script>
 		$(document).ready(function() {
 	  
 			var nice = $("html").niceScroll();  // The document page (body)
 		
-			$("#div1").html($("#div1").html()+' '+nice.version);
 		
 			$("#boxscroll").niceScroll({cursorborder:"",cursorcolor:"#00F",boxzoom:true}); // First scrollable DIV
 		});
@@ -63,6 +52,6 @@
 	<!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="js/bootstrap.js"></script>
+    <script src="<?php echo e(asset('js/bootstrap.js')); ?>"></script>
 <?php $__env->stopSection(); ?>
 <?php echo $__env->make('app', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

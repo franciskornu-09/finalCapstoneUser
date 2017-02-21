@@ -48,6 +48,11 @@ Route::get('insert', function(){
 
  });
 
+$router->get('/show/{id}',[
+    'uses' => 'PrefernceController@show',
+    'as'   => 'switch'
+]);
+
 Route::controllers([
 	'auth' => 'Auth\AuthController',
 	'password' => 'Auth\PasswordController',
