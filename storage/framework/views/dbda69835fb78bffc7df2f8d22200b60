@@ -1,6 +1,6 @@
 <?php $__env->startSection('content'); ?>
 
-<div class="content">
+<!-- <div class="content"> -->
 				<!-- banner -->
 				<div class="banner about-banner"> 
 					<div class="banner-img">  
@@ -46,7 +46,7 @@
 					</center>
 					</div>
 					
-			</div>
+		<!-- 	</div> -->
 	<!-- menu-js -->
 	<script src="<?php echo e(asset('js/classie.js')); ?>"></script>
 	<script src="<?php echo e(asset('js/main.js')); ?>"></script>

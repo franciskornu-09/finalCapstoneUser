@@ -12,6 +12,7 @@
 */
 use Illuminate\Support\Facades\DB;
 
+
 Route::get('/', 'EventController@index');
 
 Route::get('index','IndexController@index');
@@ -30,6 +31,8 @@ Route::get('gallery','GalleryController@index');
 
 Route::get('pull','PullController@index');
 
+Route::get('signup','PrefernceController@index');
+
 Route::get('first','ContactController@index');
 
 Route::get('single','SingleController@index');
@@ -42,11 +45,12 @@ Route::post('insert','FindController@index');
 
 Route::get('provideXml','MapController@show');
 
-Route::get('insert', function(){
- // DB::insert('insert into post(name, description values (?, ?)', ['francis','LearningLaravel']);
- DB::insert('insert into events (name, description) values (?, ?)', ['gank', 'Dayley']);
-
- });
+Route::filter('auth', function()
+{
+    if( ! Session::get('id')){
+        return Redirect::guest('user/login');       
+    } 
+});
 
 $router->get('/show/{id}',[
     'uses' => 'PrefernceController@show',
@@ -57,3 +61,9 @@ Route::controllers([
 	'auth' => 'Auth\AuthController',
 	'password' => 'Auth\PasswordController',
 ]);
+
+// Event::listen('auth.login', function()
+// {	
+// 	Session::get('email');
+//     Session::set('id', '');
+// });	

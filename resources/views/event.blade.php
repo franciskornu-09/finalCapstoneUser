@@ -1,7 +1,7 @@
 @extends('app')
 
 @section('content')
-			<div class="content">
+			<!-- <div class="content"> -->
 				<!-- banner -->
 				<div class="banner about-banner"> 
 					<div class="banner-img">  
@@ -41,7 +41,7 @@
 						<div class="clearfix"> </div>
 					</div>
 					
-			</div>
+			<!-- </div> -->
 	<script src="{{ asset('js/classie.js') }}"></script>
 	<script src="{{ asset('js/main.js') }}"></script>
 	<!-- //menu-js -->

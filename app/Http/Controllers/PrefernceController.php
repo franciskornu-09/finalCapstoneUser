@@ -2,9 +2,11 @@
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-
+use App\User;
+use Session;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Auth;
 class PrefernceController extends Controller {
 
 	/**
@@ -14,6 +16,13 @@ class PrefernceController extends Controller {
 	 */
 	public function index()
 	{
+		// $events = DB::select( DB::raw("SELECT * from event_folders where name ='$id'"));
+		
+		// return view('single',compact('events'));
+ $db = Auth::user()->id;
+ echo $db;
+		// return Session::get('user');
+	       // return Session::get('id');
 		
 	}
 

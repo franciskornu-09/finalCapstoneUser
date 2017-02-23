@@ -1,7 +1,7 @@
 @extends('app')
 
 @section('content')
-			<div class="content">
+			<!-- <div class="content"> -->
 				<!-- banner -->
 				<div class="banner about-banner"> 
 					<div class="banner-img">  
@@ -34,7 +34,7 @@
 				@endforeach
 			</div>
 		</div>
-	</div> 
+<!-- 	</div>  -->
 	<!-- menu-js -->
 	<script src="{{ asset('js/classie.js') }}"></script>
 	<script src="{{ asset('js/main.js') }}"></script>

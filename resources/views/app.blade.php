@@ -46,10 +46,10 @@
 					<button class="menu-button" id="open-button">O</button>
 				</div>
 				<div class="logo">
-					<h2><a href="{{action("HomeController@index")}}">H</a></h2>
+					<h2><a href="{{action('HomeController@index')}}">H</a></h2>
 				</div>
 				<div class="login">
-					<a href="#small-dialog" class="sign-in popup-top-anim"><span class="glyphicon glyphicon-user"></span></a> 
+					<a href="{{action('IndexController@index')}}" class="sign-in popup-top-anim"><span class="glyphicon glyphicon-user"></span></a> 
 					
 				</div> 
 				<div class="clearfix"> </div>
@@ -67,7 +67,6 @@
 							<li><a href="{{action("GalleryController@index")}}"> Gallery</a></li>
 							<li><a href="contact.html"> Contact </a></li>
 						</ul> 
-						<div class="clearfix"> </div>
 					</div> 
 				</div> 
 	

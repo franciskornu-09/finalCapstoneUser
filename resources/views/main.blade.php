@@ -1,7 +1,7 @@
 @extends('app')
 
 @section('content')
-			<div class="content">
+		<!-- 	<div class="content"> -->
 				<!-- banner -->
 				<div class="banner">
 					<div id="kb" class="carousel kb_elastic animate_text kb_wrapper" data-ride="carousel" data-interval="6000" data-pause="hover">
@@ -11,7 +11,7 @@
 							<div class="item active">
 								<div class="banner-img"> 
 									<div class="carousel-caption kb_caption">
-										<h3 data-animation="animated flipInX">Real estate</h3>  
+										<h3 data-animation="animated flipInX">We provide the best</h3>  
 									</div>
 								</div>
 							</div> 
@@ -19,7 +19,7 @@
 							<div class="item">
 								<div class="banner-img banner-img1"> 
 									<div class="carousel-caption kb_caption kb_caption_right">
-										<h3 data-animation="animated flipInX">Dream Home</h3> 
+										<h3 data-animation="animated flipInX">Dream Events</h3> 
 									</div>
 								</div>
 							</div> 
@@ -27,7 +27,7 @@
 							<div class="item">
 								<div class="banner-img banner-img2"> 
 									<div class="carousel-caption kb_caption kb_caption_center">
-										<h3 data-animation="animated flipInX">Latest Design</h3> 
+										<h3 data-animation="animated flipInX">Latest Gigs</h3> 
 									</div>
 								</div>
 							</div> 
@@ -54,15 +54,27 @@
 							<div id="myTabContent" class="tab-content">
 								<div role="tabpanel" class="tab-pane fade in active" id="home" aria-labelledby="home-tab">
 									<div class="tabcontent-grids">
-										<h4>Find Your Buying Property</h4>
-											<form method="post" action="/search">
-												<input type="search" name="Search" placeholder="Your City..." required="" id="value">									
-												<button type="submit" class="btn btn-default" aria-label="Left Align">
-													<span class="glyphicon glyphicon-search"></span>
-												</button>
-
-											</form>
-											<div>........................</div>
+									<center>
+										<table>
+										<tr>
+										<td>
+										 <a href="{{action('PrefernceController@index')}}" class="btn btn btn-default btn-lg active" role="button" aria-pressed="true" style="width: 100%;"><i class="glyphicon glyphicon-folder-open"></i> <br>User Tab</a>
+										 </td>
+										 <td>
+										 <a href="#" class="btn btn btn-default btn-lg active" role="button" aria-pressed="true" style="width: 100%;"><i class="glyphicon glyphicon-comment"></i> <br>Message</a>
+										 </td>
+										 </tr>
+										 <tr>
+										 <td>
+										 <a href="#" class="btn btn btn-default btn-lg active" role="button" aria-pressed="true" style="width: 100%;"><i class="glyphicon glyphicon-time"></i> <br>History</a>
+										 </td>
+										 <td>
+										 <a href="{{action('AgentController@index')}}" class="btn btn btn-default btn-lg active" role="button" aria-pressed="true" style="width: 100%;"><i class="glyphicon glyphicon-search"></i> <br>Search</a>
+										 </td>
+										 </tr>
+										 </table>
+										 </center>
+										<div>........................</div>
 										<div id="found"></div>
 									 </div>
 								</div>
@@ -70,34 +82,17 @@
 					</div>  	
 				</div> 
 				</div> 
-			</div>
+			<!-- </div> -->
 	<!-- menu-js -->
 	<script src="js/classie.js"></script>
 	<script src="js/main.js"></script>
 	<!-- //menu-js -->
 	<!-- nice scroll-js -->
 	<script src="js/jquery.nicescroll.min.js"></script> 
-	<script>
-		function searchInfo(){
-			alert("found");
-			var item = $("#value").val();
-			$.ajax({
-		      type: "GET",
-		      url:'search/' + item
-		      // url: "search/"+ $("#value").val(),
-		    })
-		    .done(function( data ) {
-		      $('#found').html(data);
-
-		      });
-		}
-
-		
+	<script>		
 		$(document).ready(function() {
 	  
 			var nice = $("html").niceScroll();  // The document page (body)
-		
-			$("#div1").html($("#div1").html()+' '+nice.version);
 		
 			$("#boxscroll").niceScroll({cursorborder:"",cursorcolor:"#00F",boxzoom:true}); // First scrollable DIV
 		});
