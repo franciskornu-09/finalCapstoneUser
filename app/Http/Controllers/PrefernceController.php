@@ -19,8 +19,10 @@ class PrefernceController extends Controller {
 		// $events = DB::select( DB::raw("SELECT * from event_folders where name ='$id'"));
 		
 		// return view('single',compact('events'));
- $db = Auth::user()->id;
- echo $db;
+		$db = Auth::user()->id;
+		$events = DB::select( DB::raw("SELECT message from event_folders where name ='$db'"));
+
+		echo $db;
 		// return Session::get('user');
 	       // return Session::get('id');
 		
